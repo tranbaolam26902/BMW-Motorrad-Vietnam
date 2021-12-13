@@ -1,0 +1,90 @@
+// Show/hide dropdown menu
+.dropdown--show:hover .dropdown {
+  display: block;
+  // Fix Mobile & Tablet dropdown menu button
+  @include maxWidth(1023px) {
+    display: none;
+  }
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  padding: 0 1rem;
+  min-width: 20rem;
+  background-color: $background-dark-gray;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  animation: fadeIn ease 0.2s;
+  @include maxWidth(1023px) {
+    display: none;
+    position: relative;
+    padding: 0;
+  }
+  &-item {
+    position: relative;
+    &:not(:nth-last-child(1)) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    // Dropdown level 2 bridge
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      bottom: 0;
+      width: 1.5rem;
+    }
+    @include maxWidth(1023px) {
+      margin-left: 2rem;
+    }
+  }
+  &-link,
+  &-2-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.6rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $text-gray;
+    transition: color ease 0.2s;
+    &:hover,
+    &:hover ion-icon {
+      color: $white;
+    }
+    ion-icon {
+      font-size: 1.6rem;
+      color: $text-gray;
+      @include maxWidth(1023px) {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+// Show/hide dropdown menu level 2
+.dropdown-2--show:hover .dropdown-2 {
+  display: block;
+  @include maxWidth(1023px) {
+    // display: none;
+  }
+}
+.dropdown-2 {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 12px);
+  padding: 0 1rem;
+  min-width: 20rem;
+  background-color: $background-dark-gray;
+  border-radius: 2px;
+  animation: fadeIn ease 0.2s;
+  &-item {
+    &:not(:nth-last-child(1)) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    @include maxWidth(1023px) {
+      margin-left: 2rem;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.top-bar {
+  height: 4rem;
+  background-color: $black;
+  .title {
+    margin-right: 2rem;
+    line-height: 4rem;
+    text-align: right;
+    font-size: 1.4rem;
+    color: $gray-light;
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  height: 6rem;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 2rem;
+  }
+  .mobile-navbar-btn {
+    display: none;
+    padding-right: 2rem;
+    font-size: 2.8rem;
+  }
+  @include maxWidth(1023px) {
+    // Fix Mobile & Tablet logo
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 6rem;
+    }
+    .mobile-navbar-btn {
+      display: inline-block;
+    }
+    #mobile-navbar--show:checked ~ .menu,
+    #mobile-dropdown--show:checked ~ .dropdown {
+      display: block;
+    }
+    .dropdown-2--show:hover .dropdown-2 {
+      display: block;
+      position: relative;
+      left: 0;
+    }
+  }
+}
+.menu {
+  display: flex;
+  // Mobile & Tablet dropdown menu
+  @include maxWidth(1023px) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0 2rem;
+    background-color: $background-dark-gray;
+  }
+  &-item {
+    position: relative;
+    @include maxWidth(1023px) {
+      &:not(:nth-last-child(1)) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    // Navbar hover animation
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      transition: all ease 0.3s;
+      cursor: pointer;
+      @include maxWidth(1023px) {
+        display: none;
+      }
+    }
+    &:hover::after {
+      height: 5px;
+      background-color: $blue-light;
+    }
+    &--active::after {
+      height: 5px;
+      background-color: $black;
+    }
+  }
+  &-link {
+    display: block;
+    padding: 0 1.2rem;
+    line-height: 6rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: $black;
+    text-transform: uppercase;
+    @include maxWidth(1239px) {
+      font-size: 1.3rem;
+    }
+    @include maxWidth(1023px) {
+      padding: 0;
+      color: $text-gray;
+      text-transform: none;
+      line-height: 4rem;
+      // Arrow icon
+      ion-icon {
+        position: absolute;
+        top: 1rem;
+        right: 0.6rem;
+        font-size: 1.6rem;
+        color: $text-gray;
+      }
+    }
+  }
+}

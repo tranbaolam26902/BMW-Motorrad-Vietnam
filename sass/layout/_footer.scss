@@ -1,0 +1,104 @@
+.footer {
+  padding: 6rem 0 2rem;
+  background-color: $background-dark-gray;
+  .col {
+    margin-bottom: 4rem;
+  }
+  .row {
+    margin: 0;
+  }
+  &-heading {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: $white;
+  }
+  &-link {
+    display: block;
+    padding: 1.4rem 0;
+    font-size: 1.4rem;
+    color: $gray;
+    border-bottom: 1px solid $text-color;
+    transition: color ease 0.2s;
+    &:hover {
+      color: $white;
+    }
+  }
+  &-social {
+    display: flex;
+    margin: 0 -1rem;
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1rem;
+      width: 4rem;
+      height: 4rem;
+      background-color: $black;
+      border: 1px solid $text-color;
+      border-radius: 1px;
+      ion-icon {
+        font-size: 2.6rem;
+        color: $white;
+      }
+    }
+  }
+  &-contact {
+    position: relative;
+    .icon-location {
+      position: absolute;
+      display: inline-block;
+      top: 4rem;
+      left: -0.2rem;
+      font-size: 1.6rem;
+      color: $gray;
+    }
+  }
+  &-address {
+    padding-left: 2rem;
+  }
+  &-customer-care {
+    margin-top: 4rem;
+    b {
+      display: inline-block;
+      padding: 0.6rem 2rem;
+      font-size: 1.4rem;
+      color: $gray;
+    }
+    p {
+      padding: 0.6rem 0;
+      font-size: 1.4rem;
+      color: $gray;
+      ion-icon {
+        position: relative;
+        top: 0.3rem;
+        left: -0.2rem;
+        min-width: 2rem;
+        color: $gray;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.bottom-bar {
+  padding: 1.5rem 2rem;
+  height: 6rem;
+  background-color: #1b1b1b;
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 100%;
+    @include maxWidth(1023px) {
+      padding: 0;
+    }
+  }
+  &-link {
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    color: $gray-light;
+    transition: color ease 0.2s;
+    &:hover {
+      color: $white;
+    }
+  }
+}

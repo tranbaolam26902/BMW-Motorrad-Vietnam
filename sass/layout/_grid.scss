@@ -1,0 +1,41 @@
+.grid {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+.col {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.c-6 {
+  flex: 0 0 50%;
+  width: 50%;
+}
+.c-4 {
+  flex: 0 0 33.33333%;
+  width: 33.3333%;
+}
+.c-3 {
+  flex: 0 0 25%;
+  width: 25%;
+}
+// Tablet
+@include maxWidth(1023px) {
+  .l-6 {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+// Mobile
+@include maxWidth(740px) {
+  .m-12 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
